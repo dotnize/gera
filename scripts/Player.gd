@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 signal shoot
 
-const WALK_SPEED = 200
-const RUN_SPEED = 300
+const WALK_SPEED = 140
+const RUN_SPEED = 200
 var velocity  = Vector2()
 var speed = WALK_SPEED
 
