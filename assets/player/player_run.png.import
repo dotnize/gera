@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_run_unarmed.png-134b976b6747a815e8dd75591186fe11.stex"
+path="res://.import/player_run.png-a8fa5f6477361258876a91c79d7aa2ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player_run_unarmed.png"
-dest_files=[ "res://.import/player_run_unarmed.png-134b976b6747a815e8dd75591186fe11.stex" ]
+source_file="res://assets/player/player_run.png"
+dest_files=[ "res://.import/player_run.png-a8fa5f6477361258876a91c79d7aa2ec.stex" ]
 
 [params]
 

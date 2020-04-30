@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 signal shoot
 
-const WALK_SPEED = 140
-const RUN_SPEED = 200
+const WALK_SPEED = 130
+const RUN_SPEED = 190
 var velocity  = Vector2()
 var speed = WALK_SPEED
 
@@ -13,7 +13,7 @@ var current_weapon = 0
 
 
 func _ready():
-	$PlayerSprite.animation = 'player_walk_unarmed'
+	$PlayerSprite.animation = 'player_walk'
 	$PlayerSprite.playing = false
 	$PlayerSprite.frame = 0
 
@@ -31,11 +31,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed('run'):
 		speed = RUN_SPEED
 		if not reloading and not shooting and current_weapon == 0:
-			$PlayerSprite.animation = 'player_run_unarmed'
+			$PlayerSprite.animation = 'player_run'
 	else:
 		speed = WALK_SPEED
 		if not reloading and not shooting and current_weapon == 0:
-			$PlayerSprite.animation = 'player_walk_unarmed'
+			$PlayerSprite.animation = 'player_walk'
 		
 	var look_vec = get_global_mouse_position() - global_position
 	global_rotation = atan2(look_vec.y, look_vec.x)
