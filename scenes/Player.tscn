@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/player/player_run.png" type="Texture" id=1]
 [ext_resource path="res://assets/player/player_walk.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/weapons/pistol_deagle.png" type="Texture" id=7]
 [ext_resource path="res://assets/weapons/smg_mp5.png" type="Texture" id=8]
 [ext_resource path="res://assets/cone-shape-png-3.png" type="Texture" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.5034
@@ -90,14 +91,14 @@ polygon = PoolVector2Array( -1.93374, -12.3739, -7.54166, 2.58051, -1.93374, 15.
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "pistol_9mm",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "pistol_deagle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "pistol_9mm",
 "speed": 5.0
 } ]
 
@@ -111,6 +112,12 @@ animations = [ {
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="."]
+visible = false
+position = Vector2( 29.0164, -23.664 )
+scale = Vector2( 16.8459, 16.8459 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -156,8 +163,9 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
 [node name="LOS" type="Light2D" parent="."]
-position = Vector2( 140.191, -0.711353 )
-scale = Vector2( 0.84798, 0.84798 )
+position = Vector2( 198.222, 0.824601 )
+scale = Vector2( 0.970964, 1.01989 )
 texture = ExtResource( 9 )
 mode = 2
+range_item_cull_mask = 3
 [connection signal="timeout" from="ShootingTimer" to="." method="_on_ShootingTimer_timeout"]
