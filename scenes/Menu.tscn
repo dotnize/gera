@@ -9,12 +9,12 @@ size = 100
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
@@ -48,7 +48,7 @@ margin_left = 185.333
 margin_top = 204.261
 margin_right = 826.333
 margin_bottom = 229.261
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.12549, 0.12549, 1 )
 text = "project"
@@ -65,7 +65,7 @@ margin_right = 537.752
 margin_bottom = 452.639
 focus_mode = 0
 mouse_default_cursor_shape = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0.396078, 0.396078, 1 )
 custom_colors/font_color_pressed = Color( 0.8, 0.203922, 0.203922, 1 )

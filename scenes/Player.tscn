@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/player/player_run.png" type="Texture" id=1]
 [ext_resource path="res://assets/player/player_walk.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/player/player_rifle.png" type="Texture" id=6]
 [ext_resource path="res://assets/weapons/pistol_deagle.png" type="Texture" id=7]
 [ext_resource path="res://assets/weapons/smg_mp5.png" type="Texture" id=8]
+[ext_resource path="res://assets/cone-shape-png-3.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.5034
@@ -153,4 +154,10 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
+
+[node name="LOS" type="Light2D" parent="."]
+position = Vector2( 140.191, -0.711353 )
+scale = Vector2( 0.84798, 0.84798 )
+texture = ExtResource( 9 )
+mode = 2
 [connection signal="timeout" from="ShootingTimer" to="." method="_on_ShootingTimer_timeout"]
