@@ -9,19 +9,22 @@ polygon = PoolVector2Array( -22.2832, -22.2213, -22.2787, -16.8719, -22.2457, 22
 extents = Vector2( 22.2716, 22.4194 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-light_mask = 3
+light_mask = 6
 use_parent_material = true
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
 use_parent_material = true
 scale = Vector2( 0.0866828, 0.0866828 )
 texture = ExtResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
-light_mask = 2
+show_behind_parent = true
+light_mask = 4
 scale = Vector2( 11.5363, 11.5363 )
 occluder = SubResource( 1 )
-light_mask = 2
+light_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
 shape = SubResource( 2 )

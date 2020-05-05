@@ -93,5 +93,9 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 514, 300 )
+current = true
 [connection signal="pressed" from="PLAY" to="." method="_on_PLAY_pressed"]
 [connection signal="pressed" from="EXIT" to="." method="_on_EXIT_pressed"]

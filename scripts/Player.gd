@@ -54,8 +54,11 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed('shoot'):
 		shoot()
-	
+
 func _input(event):
+	if event.is_action_pressed('ui_cancel'):
+		get_tree().change_scene("res://scenes/Menu.tscn")
+		
 	if event.is_action_pressed('equip1'):
 		$PlayerSprite.animation = 'player_rifle'
 		$PistolSprite.visible = false

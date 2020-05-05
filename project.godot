@@ -17,7 +17,11 @@ _global_script_class_icons={
 
 config/name="GERA"
 run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/godot.png"
+
+[display]
+
+window/size/fullscreen=true
 
 [input]
 

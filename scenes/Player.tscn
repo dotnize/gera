@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/player/player_run.png" type="Texture" id=1]
 [ext_resource path="res://assets/player/player_walk.png" type="Texture" id=2]
@@ -9,103 +9,97 @@
 [ext_resource path="res://assets/weapons/pistol_deagle.png" type="Texture" id=7]
 [ext_resource path="res://assets/weapons/smg_mp5.png" type="Texture" id=8]
 [ext_resource path="res://assets/cone-shape-png-3.png" type="Texture" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://assets/godot.png" type="Texture" id=10]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 10.5034
-height = 17.4165
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 192, 0, 64, 64 )
+region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 256, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "player_rifle",
-"speed": 5.0
+"name": "player_walk",
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "player_pistol",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "player_walk",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "player_run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "player_rifle",
+"speed": 5.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=20]
-light_mode = 2
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 10.5034
+height = 17.4165
 
-[sub_resource type="OccluderPolygon2D" id=17]
-polygon = PoolVector2Array( -1.93374, -12.3739, -7.54166, 2.58051, -1.93374, 15.9327, 10.0832, 2.58051 )
-
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "pistol_9mm",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "pistol_deagle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "pistol_9mm",
+"speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=19]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
@@ -116,24 +110,21 @@ animations = [ {
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
-[node name="icon for LOS test" type="Sprite" parent="."]
+[node name="fov test" type="Sprite" parent="."]
 visible = false
-position = Vector2( 29.0164, -23.664 )
-scale = Vector2( 16.8459, 16.8459 )
+light_mask = 4
+position = Vector2( 111.032, 135.967 )
+scale = Vector2( 16.8271, 16.8271 )
 texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1.02479, -0.0361564 )
 scale = Vector2( 0.937464, 0.937464 )
-frames = SubResource( 14 )
+frames = SubResource( 13 )
 animation = "player_run"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerSprite"]
-material = SubResource( 20 )
-occluder = SubResource( 17 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 14 )
 
 [node name="Aim" type="Position2D" parent="."]
 position = Vector2( 19.3842, 1.62639 )
@@ -145,17 +136,17 @@ one_shot = true
 [node name="PistolSprite" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 4.11765, -2.97114 )
-frames = SubResource( 18 )
+frames = SubResource( 15 )
 animation = "pistol_9mm"
 
 [node name="RifleSprite" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 0.582279, -3.11939 )
-frames = SubResource( 19 )
+frames = SubResource( 16 )
 animation = "smg_mp5"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 100.252, 0 )
+position = Vector2( 100, 0 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
 drag_margin_h_enabled = true
@@ -166,15 +157,15 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="LOS" type="Light2D" parent="."]
-light_mask = 2
-position = Vector2( -11.2612, 1.24519 )
-scale = Vector2( 2.1719, 2.28134 )
+[node name="FOV" type="Light2D" parent="."]
+light_mask = 5
+position = Vector2( -23.9505, 1.71316 )
+scale = Vector2( 3.29156, 3.57923 )
 texture = ExtResource( 9 )
 offset = Vector2( 110, 0 )
 texture_scale = 0.5
 mode = 2
-range_item_cull_mask = 3
+range_item_cull_mask = 5
 shadow_enabled = true
-shadow_item_cull_mask = 2
+shadow_item_cull_mask = 5
 [connection signal="timeout" from="ShootingTimer" to="." method="_on_ShootingTimer_timeout"]
