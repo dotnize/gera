@@ -15,6 +15,6 @@ void fragment() {
 		
 		// darker B&W color
         float value = dot(inputColor.rgb, vec3(0.2000, 0.7000, 0.0700));
-        COLOR = vec4(value, value, value, 1.0);	
+        COLOR = vec4(value, value, value, inputColor.a);	
     }
 }

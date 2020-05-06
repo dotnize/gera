@@ -61,6 +61,11 @@ region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "player_rifle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "player_walk",
@@ -75,11 +80,6 @@ animations = [ {
 "loop": true,
 "name": "player_run",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "player_rifle",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=14]
@@ -88,14 +88,14 @@ height = 17.4165
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "pistol_deagle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "pistol_9mm",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "pistol_deagle",
 "speed": 5.0
 } ]
 
@@ -158,14 +158,14 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
 [node name="FOV" type="Light2D" parent="."]
-light_mask = 5
+light_mask = 7
 position = Vector2( -23.9505, 1.71316 )
 scale = Vector2( 3.29156, 3.57923 )
 texture = ExtResource( 9 )
 offset = Vector2( 110, 0 )
 texture_scale = 0.5
 mode = 2
-range_item_cull_mask = 5
+range_item_cull_mask = 7
 shadow_enabled = true
-shadow_item_cull_mask = 5
+shadow_item_cull_mask = 4
 [connection signal="timeout" from="ShootingTimer" to="." method="_on_ShootingTimer_timeout"]

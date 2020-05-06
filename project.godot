@@ -21,7 +21,8 @@ config/icon="res://assets/godot.png"
 
 [display]
 
-window/size/fullscreen=true
+window/size/resizable=false
+window/size/borderless=true
 
 [input]
 

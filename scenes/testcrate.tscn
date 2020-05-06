@@ -13,18 +13,16 @@ light_mask = 6
 use_parent_material = true
 
 [node name="Sprite" type="Sprite" parent="."]
-light_mask = 4
+light_mask = 3
 use_parent_material = true
 scale = Vector2( 0.0866828, 0.0866828 )
 texture = ExtResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
-show_behind_parent = true
 light_mask = 4
 scale = Vector2( 11.5363, 11.5363 )
 occluder = SubResource( 1 )
 light_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-show_behind_parent = true
 shape = SubResource( 2 )
