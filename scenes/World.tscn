@@ -38,18 +38,18 @@ shader = ExtResource( 8 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 67, 17, 47, 91 )
 
-[sub_resource type="CanvasItemMaterial" id=8]
+[sub_resource type="CanvasItemMaterial" id=4]
 light_mode = 2
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 11 )
 region = Rect2( 115, 24, 59, 61 )
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 10 )
 shader_param/color = Vector3( 0.9, 0.9, 0.9 )
 shader_param/OCTAVES = 3
@@ -95,15 +95,15 @@ use_parent_material = true
 position = Vector2( 708.538, 346.29 )
 rotation = 1.309
 scale = Vector2( 1.63207, 1.63207 )
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 
 [node name="zombietest" type="Sprite" parent="."]
 light_mask = 4
-material = SubResource( 8 )
+material = SubResource( 4 )
 position = Vector2( 937.939, 670.135 )
 rotation = -1.309
 scale = Vector2( 0.817246, 0.817246 )
-texture = SubResource( 7 )
+texture = SubResource( 5 )
 
 [node name="crate" parent="." instance=ExtResource( 7 )]
 position = Vector2( 510.503, 371.502 )
@@ -116,7 +116,7 @@ position = Vector2( 651.473, 630.023 )
 
 [node name="fog" type="Sprite" parent="."]
 light_mask = 4
-material = SubResource( 5 )
+material = SubResource( 6 )
 position = Vector2( 760.192, 496.441 )
 scale = Vector2( 2.29959, 2.29959 )
 texture = ExtResource( 9 )

@@ -10,12 +10,16 @@ var speed = WALK_SPEED
 var shooting  = false
 var reloading = false
 var current_weapon = 0
+var aiming
 
+onready var TweenNode = get_node("Tween")
 
 func _ready():
 	$PlayerSprite.animation = 'player_walk'
 	$PlayerSprite.playing = false
 	$PlayerSprite.frame = 0
+	aiming = false
+	$Camera2D.position = Vector2(0.0, 0.0)
 
 
 func _physics_process(delta):
@@ -36,9 +40,17 @@ func _physics_process(delta):
 		speed = WALK_SPEED
 		if not reloading and not shooting and current_weapon == 0:
 			$PlayerSprite.animation = 'player_walk'
-		
+	
+	var oldrot = global_rotation_degrees
 	var look_vec = get_global_mouse_position() - global_position
-	global_rotation = atan2(look_vec.y, look_vec.x)
+	var mouserot = rad2deg(atan2(look_vec.y, look_vec.x))
+	# interpolate
+	if mouserot < -90 and oldrot > 90:
+		mouserot += 360
+	elif mouserot > 90 and oldrot < -90:
+		mouserot -= 360
+	TweenNode.interpolate_property(self, 'global_rotation_degrees', oldrot, mouserot, 0.15)
+	TweenNode.start()
 	
 	if move_vec.length() > 0:
 		velocity = move_vec.normalized() * speed
@@ -55,7 +67,16 @@ func _physics_process(delta):
 	if Input.is_action_pressed('shoot'):
 		shoot()
 
+
 func _input(event):
+	if event.is_action_pressed('aim'):
+		if !aiming:
+			$Camera2D.position = Vector2(120.0, 0.0)
+			aiming = true
+		elif aiming:
+			aiming = false
+			$Camera2D.position = Vector2(0.0, 0.0)
+	
 	if event.is_action_pressed('ui_cancel'):
 		get_tree().change_scene("res://scenes/Menu.tscn")
 		
@@ -87,3 +108,12 @@ func shoot():
 
 func _on_ShootingTimer_timeout():
 	shooting = false
+	
+# apply rotation for mouse
+func _set_rotation(new_transform):
+	
+	# apply tweened x-vector of basis
+	self.transform.x = new_transform
+	
+	# make x and y orthogonal and normalized
+	self.transform = self.transform.orthonormalized()

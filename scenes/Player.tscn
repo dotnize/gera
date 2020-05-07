@@ -88,14 +88,14 @@ height = 17.4165
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "pistol_9mm",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "pistol_deagle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "pistol_9mm",
 "speed": 5.0
 } ]
 
@@ -145,18 +145,6 @@ position = Vector2( 0.582279, -3.11939 )
 frames = SubResource( 16 )
 animation = "smg_mp5"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 100, 0 )
-current = true
-zoom = Vector2( 0.7, 0.7 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-
 [node name="FOV" type="Light2D" parent="."]
 light_mask = 7
 position = Vector2( -23.9505, 1.71316 )
@@ -168,4 +156,15 @@ mode = 2
 range_item_cull_mask = 7
 shadow_enabled = true
 shadow_item_cull_mask = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 8.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="timeout" from="ShootingTimer" to="." method="_on_ShootingTimer_timeout"]
