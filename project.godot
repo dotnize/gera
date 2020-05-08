@@ -22,7 +22,7 @@ config/icon="res://assets/godot.png"
 [display]
 
 window/size/resizable=false
-window/size/borderless=true
+window/stretch/aspect="keep"
 
 [input]
 
