@@ -112,7 +112,7 @@ script = ExtResource( 3 )
 
 [node name="fov test" type="Sprite" parent="."]
 visible = false
-light_mask = 4
+light_mask = 5
 position = Vector2( 111.032, 135.967 )
 scale = Vector2( 16.8271, 16.8271 )
 texture = ExtResource( 10 )
@@ -121,9 +121,10 @@ texture = ExtResource( 10 )
 position = Vector2( 1.02479, -0.0361564 )
 scale = Vector2( 0.937464, 0.937464 )
 frames = SubResource( 13 )
-animation = "player_run"
+animation = "player_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
 shape = SubResource( 14 )
 
 [node name="Aim" type="Position2D" parent="."]
@@ -159,6 +160,7 @@ shadow_item_cull_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 smoothing_speed = 8.0
 drag_margin_left = 0.0
