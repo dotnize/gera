@@ -10,7 +10,6 @@ extends Node2D
 func _ready():
 	Input.set_default_cursor_shape(0)
 	Input.set_custom_mouse_cursor(null)
-	OS.set_window_maximized(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

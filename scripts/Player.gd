@@ -24,11 +24,13 @@ func _ready():
 	$Camera2D.position = Vector2(0.0, 0.0)
 
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	movement()
 	if Input.is_action_pressed('shoot'):
 		shoot()
 
+# warning-ignore:unused_argument
 func _process(delta):
 	rotation()
 
@@ -42,6 +44,7 @@ func _input(event):
 			$Camera2D.position = Vector2(0.0, 0.0)
 	
 	if event.is_action_pressed('ui_cancel'):
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://scenes/Menu.tscn")
 		
 	if event.is_action_pressed('equip1'):
@@ -87,6 +90,7 @@ func movement():
 			$PlayerSprite.playing = false
 			$PlayerSprite.frame = 0
 			
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 
 func rotation():
